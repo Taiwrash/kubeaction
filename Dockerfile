@@ -1,8 +1,13 @@
 FROM golang:1.x
 
-COPY . /action
-WORKDIR /action
+WORKDIR /app
 
-RUN go build -o main .
+COPY go.mod go.sum ./
 
-ENTRYPOINT ["/action/main"]
+RUN go mod download
+
+COPY . .
+
+RUN go build -o app
+
+ENTRYPOINT ["./app"]
