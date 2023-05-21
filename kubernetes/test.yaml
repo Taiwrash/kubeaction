@@ -1,1 +1,0 @@
-# Include your deployment and service sparated with `---` as yaml separator manisfest file in the path above. This is the file that will be used to deploy your application.
